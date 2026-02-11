@@ -17,7 +17,10 @@ export default function PatientDetails({ patient }) {
 
   return (
     <div>
-      <h3>{patient.firstName} {patient.lastName}</h3>
+      <h2 className="text-2xl font-bold mb-4">
+        {patient.firstName} {patient.lastName}
+      </h2>
+
       <AddVisitForm patientId={patient._id} refresh={fetchVisits} />
       <VisitList visits={visits} />
     </div>

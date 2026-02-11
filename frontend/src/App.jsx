@@ -18,11 +18,23 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>EHR System</h1>
-      <AddPatientForm refresh={fetchPatients} />
-      <PatientList patients={patients} onSelect={setSelected} />
-      {selected && <PatientDetails patient={selected} />}
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8">
+      <h1 className="text-4xl font-bold mb-8">Electronic Health Record</h1>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="md:col-span-1 bg-slate-700/50 p-6 rounded-xl shadow-lg">
+          <AddPatientForm refresh={fetchPatients} />
+          <PatientList patients={patients} onSelect={setSelected} />
+        </div>
+
+        <div className="md:col-span-2 bg-slate-700/50 p-6 rounded-xl shadow-lg">
+          {selected ? (
+            <PatientDetails patient={selected} />
+          ) : (
+            <p className="text-gray-300">Select a patient to view details</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
