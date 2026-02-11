@@ -100,8 +100,3 @@ Visits
 GET /api/visits/:patientId
 POST /api/visits/:patientId
 DELETE /api/visits/:id
-
-
-
-## 📂 Project Structure
-
